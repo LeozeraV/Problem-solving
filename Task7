@@ -1,0 +1,178 @@
+#include<stdio.h>
+int main(void){
+
+char letter;
+float square;
+float number;
+int mult;
+float inches;
+float centimeters;
+int range;
+float firstnumber;
+float secondnumber;
+char end;
+
+
+
+{Menu:
+printf("Please enter the letter which corresponds with your choice:\nA - Calculate the area of a square\nB - Convert centimeters to inches\nC - Display a mutiplication table for a range of numbers between 3-8\nD - Find the maximum of two numbers\nY - To exit the program\n");
+scanf(" %c", &letter);
+}
+
+switch (letter)
+{
+
+
+case 'A' :
+case 'a' : 
+  printf("You have decided to CALCULATE THE AREA OF A SQUARE\nThe formula that will be used is square = side * side\nPlease enter the length of the side of the square (in cm):\n");
+  scanf("\n%f", &number);
+square = number * number;
+  printf("The area of your square is: %0.2f\n",square);
+  CaseA:
+printf("Would you like to see the Options again?\nPlease Enter Y or N\n"); 
+ scanf(" %c", &end);
+
+if (end == 'Y'|| end =='y')
+{  
+goto Menu;
+}
+
+if (end == 'N' || end == 'n')
+{  
+printf("You decided to exit the program, Thanks!");
+ return 0;
+}
+else {
+ goto CaseA;
+}
+
+break;
+
+
+case 'B':
+case 'b': 
+  printf("You have decided to CONVERT CENTIMETERS TO INCHES\nThe formula that will be used is centimeters / 2.54\nPlease enter the lenght in centimeters:\n");
+  scanf("%f", &centimeters);
+inches = centimeters / 2.54;
+  printf ("%0.2f\n", inches);
+  CaseB:
+printf("Would you like to see the Options again?\nPlease Enter Y or N\n"); 
+ scanf(" %c", &end);
+
+if (end == 'Y'|| end =='y')
+{  
+goto Menu;
+}
+
+if (end == 'N' || end == 'n')
+{  
+printf("You decided to exit the program, Thanks!");
+ return 0;
+}
+else {
+ goto CaseB;
+}
+
+break;
+
+
+case 'C':
+case 'c': 
+ printf("You have decided to Display a mutiplication table for a range of numbers between 3-8\nWe will mutiply the number you entered by 1 to 10\n");
+
+ CaseC: 
+ printf("Please enter a number between 3-8\n");
+ scanf(" %d", &range);
+
+if(range <3 || range >8)
+{
+  goto CaseC;
+ }
+else{
+for (mult =1; mult <=10; ++mult) {
+  printf("%d * %d = %d \n", range, mult, range * mult);
+ }
+ CaseC2:
+ printf("Would you like to see the Options again?\nPlease Enter Y or N\n"); 
+ scanf(" %c", &end);
+}
+if (end == 'Y'|| end =='y')
+{  
+goto Menu;
+}
+
+if (end == 'N' || end == 'n')
+{  
+printf("You decided to exit the program, Thanks!");
+ return 0;
+}
+else {
+ goto CaseC2;
+}
+
+ 
+break;
+
+
+case 'D':
+case 'd':
+ printf("Find the maximum of two numbers\nTo find the maximum of a number we will compare eache other em display the bigghest one\nPlease enter the first number: ");
+ scanf("%f", &firstnumber);
+ printf("Please enter the second number: ");
+ scanf("%f", &secondnumber);
+
+if (firstnumber >secondnumber)
+ {
+  printf("%0.2f is maximum", firstnumber);
+ }
+else{
+  printf("%0.2f is maximum\n", secondnumber);
+ } 
+ CaseD:
+printf("Would you like to see the Options again?\nPlease Enter Y or N\n"); 
+ scanf(" %c", &end);
+
+if (end == 'Y'|| end =='y')
+{  
+goto Menu;
+}
+
+if (end == 'N' || end == 'n')
+{  
+printf("You decided to exit the program, Thanks!");
+ return 0;
+}
+else {
+ goto CaseD;
+}
+
+break;
+
+
+case 'Y':
+case 'y':
+ printf("You decided to exit the program, Thanks!");
+return 0;
+
+
+default:
+ printf("Sorry, your input is invalid, You can only enter A, B, C or D.\n" );
+ printf("Would you like to try again?\nY = Yes or N = Not\n");
+ scanf(" %c", &end);
+if (end == 'N', end =='n')
+{
+  printf("You decided to exit the program, Thanks!");
+return 0;
+}
+else if (end == 'Y', 'y')
+{  
+goto Menu;
+}
+break;
+ 
+
+}
+return 0;
+}
+
